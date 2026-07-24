@@ -1,0 +1,17 @@
+id: team.java.test-production-change
+title: Test production changes
+severity: mandatory
+events:
+  - before_completion
+instruction: >
+  Run the relevant automated tests for the changed production code and report
+  the result before completing the task.
+when:
+  facts:
+    - fact: repository.language.java
+      operator: equals
+      value: true
+    - fact: change.production_files.count
+      operator: greater_than_or_equal
+      value: 1
+parameters: {}
