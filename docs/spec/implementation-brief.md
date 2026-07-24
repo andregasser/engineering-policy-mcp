@@ -14,13 +14,13 @@ This brief defines the implementation scope of the first PoC.
 If the earlier documents conflict, use this precedence:
 
 1. This implementation brief
-2. `poc-scope.md`
-3. `mcp-api.md`
-4. `facts.md`
-5. `plugin-sdk.md`
-6. `ADRs.md`
-7. `engineering-policy-mcp-konzept-v0.4-addendum.docx`
-8. `engineering-policy-mcp-konzept-v0.3.md`
+2. `mcp-api.md`
+3. `facts.md`
+4. `plugin-sdk.md`
+5. `architecture.md`
+6. `adrs.md`
+7. `../legacy/concept-v0.4-addendum.md`
+8. `../legacy/concept-v0.3.md`
 
 The v0.3 concept remains the product vision and post-PoC roadmap. It must not be
 used to expand the first PoC.
@@ -511,10 +511,12 @@ engineering-policy-mcp/
 ├── schemas/
 │   └── policy.schema.json
 ├── policies/
-│   └── company/
-│       └── baseline/
-│           ├── test-production-change.yaml
-│           └── comprehensive-review.yaml
+│   ├── company/
+│   │   └── baseline/
+│   │       └── comprehensive-review.yaml
+│   └── teams/
+│       └── java/
+│           └── test-production-change.yaml
 ├── src/
 │   └── engineering_policy/
 │       ├── application/
