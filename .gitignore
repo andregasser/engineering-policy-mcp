@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# IDE and operating system
+.idea/
+.vscode/
+.DS_Store
+
+# Engineering Policy runtime data
+.engineering-policy/telemetry/
+
+# Local evaluation results
+evaluation/results.md
