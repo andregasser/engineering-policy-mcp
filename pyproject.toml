@@ -1,0 +1,48 @@
+[project]
+name = "engineering-policy-mcp"
+version = "0.1.0"
+description = "Local MCP server for deterministic engineering policy resolution"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "jsonschema>=4.23,<5",
+  "mcp>=1.2,<2",
+  "pathspec>=0.12,<1",
+  "pydantic>=2.10,<3",
+  "pyyaml>=6.0,<7",
+]
+
+[project.scripts]
+engineering-policy = "engineering_policy.cli.main:main"
+engineering-policy-mcp = "engineering_policy.mcp.server:main"
+
+[dependency-groups]
+dev = [
+  "mypy>=1.14,<2",
+  "pytest>=8.3,<9",
+  "ruff>=0.9,<1",
+  "types-jsonschema>=4.23",
+  "types-pyyaml>=6.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/engineering_policy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+
