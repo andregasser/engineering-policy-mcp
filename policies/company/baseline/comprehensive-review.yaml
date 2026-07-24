@@ -1,0 +1,24 @@
+id: company.comprehensive-review
+title: Perform a comprehensive review
+severity: mandatory
+events:
+  - before_completion
+instruction: >
+  Perform a comprehensive review covering correctness, regressions,
+  architecture consistency, security, backward compatibility, test coverage
+  and unnecessary complexity. Resolve all material findings before completing
+  the task.
+when:
+  facts:
+    - fact: change.substantial
+      operator: equals
+      value: true
+parameters:
+  review_areas:
+    - correctness
+    - regression_risk
+    - architecture
+    - security
+    - backward_compatibility
+    - test_coverage
+    - unnecessary_complexity
